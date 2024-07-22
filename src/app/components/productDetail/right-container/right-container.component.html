@@ -1,1 +1,172 @@
-<div class="border border-primary p-10"></div>
+<div class="">
+    <p class="uppercase text-[#9D9EA2] text-[14px] leading-[21px] pb-3 lg:pb-4">CONCENTRATES</p>
+    <p
+        class="text-[#060709] font-medium text-[20px] leading-[30px] lg:font-semibold lg:text-[32px] lg:leading-[38.4px]">
+        {{product.name}}
+    </p>
+
+    <!-- categories -->
+
+    <div class="flex my-3 lg:my-4 gap-4 h-[28px] lg:h-[36px]">
+        <div class="h-full bg-[#F2F6F4] px-[10px] lg:px-4 flex rounded-[8px]"
+            *ngFor="let category of product.categories">
+            <p class="m-auto text-[12px] leading-[18px] text-secondary font-normal">{{category}}</p>
+        </div>
+    </div>
+
+    <!-- pricing & product rating section -->
+
+    <div class="flex w-full justify-between">
+        <div class="flex gap-2 lg:gap-3 items-center">
+            <p
+                class="text-[#9D9EA2] text-[14px] leading-[21px] lg:text-[16px] lg:leading-[24px] font-normal line-through">
+                $50.00</p>
+            <p class="text-red-primary text-[16px] leading-[24px] lg:text-[20px] lg:leading-[30px] font-medium">
+                ${{product.price}}.00</p>
+        </div>
+        <div class="flex gap-2 lg:gap-3 items-center ">
+            <div class="flex items-center gap-1">
+                <img src="assets/star.png" alt="star" height="16" width="16">
+                <p class="text-[16px] leading-[24px] text-[#060709]">4.6/5</p>
+            </div>
+            <div class="text-[#C8C9CB]">|</div>
+            <div class="flex items-center justify-center gap-1">
+                <p class="text-[16px] leading-[24px] text-[#060709]">135</p>
+                <p class="text-[#9D9EA2] text-[14px] leading-[21px]">Reviews</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- product-features -->
+
+    <div class="my-5 rounded-[8px] border border-[#F4F4F4] py-5 px-6 flex flex-col gap-5">
+        <div *ngFor="let feature of features" class="flex gap-4">
+            <img [src]='feature.icon' alt="icon" class="h-[32px] w-[32px]">
+            <div>
+                <p class="text-[#717378] text-[12px] leading-[18px] font-[300] uppercase">{{feature.title}}</p>
+                <p class="text-[#060709] text-[14px] leading-[21px] font-[400] pt-[6px]">{{feature.desc}}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- product description -->
+
+    <div class="border-b border-[#F4F4F4] pb-6">
+        <p class="text-[#717378] text-[12px] leading-[18px] font-[300] uppercase">Description</p>
+        <p>{{product.description}}</p>
+    </div>
+
+    <div class="my-5 flex justify-between flex-wrap gap-6">
+        <div>
+            <p class="text-[#717378] text-[12px] leading-[18px] font-[300] uppercase">Weight</p>
+            <div class="mt-3 flex gap-4">
+                <div class="bg-[#F3FBF4] border border-primary rounded-[4px] py-1 px-[14px] ">
+                    <p class="text-[12px] leading-[18px] font-[400] text-[#060709]">28g</p>
+                </div>
+                <div class="bg-[#F4F4F4] border border-[#F4F4F4] rounded-[4px] py-1 px-[14px] ">
+                    <p class="text-[12px] leading-[18px] font-[400] text-[#060709]">1/2lb</p>
+                </div>
+                <div class="bg-[#F4F4F4] border border-[#F4F4F4] rounded-[4px] py-1 px-[14px] ">
+                    <p class="text-[12px] leading-[18px] font-[400] text-[#060709]">1/4lb</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p class="text-[#717378] text-[12px] leading-[18px] font-[300] uppercase">Add Integra Pack</p>
+            <div class="mt-3 flex gap-4">
+                <div class="bg-[#F3FBF4] border border-primary rounded-[4px] py-1 px-[14px] ">
+                    <p class="text-[12px] leading-[18px] font-[400] text-[#060709]">28g</p>
+                </div>
+                <div class="bg-[#F4F4F4] border border-[#F4F4F4] rounded-[4px] py-1 px-[14px] ">
+                    <p class="text-[12px] leading-[18px] font-[400] text-[#060709]">1/2lb</p>
+                </div>
+                <div class="bg-[#F4F4F4] border border-[#F4F4F4] rounded-[4px] py-1 px-[14px] ">
+                    <p class="text-[12px] leading-[18px] font-[400] text-[#060709]">1/4lb</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-[#FEF8E8] px-[14px] py-1 rounded-full inline-block pt-1">
+        <p class="text-[14px] leading-[21px] font-[400] text-[#46494F]">Purchase this product now and earn <span
+                class="text-red-primary">80</span> Points!</p>
+    </div>
+
+    <!-- Add cart section -->
+
+    <div class="my-5 border border-[#f4f4f4] rounded-[16px] p-6">
+        <div class="flex flex-col gap-3">
+            <div class="flex justify-between text-[#46494F] text-[14px] leading-[21px] font-[400]">
+                <p>Khalifa Kush (AAAA)</p>
+                <p>$120.00</p>
+            </div>
+            <div class="flex justify-between text-[#46494F] text-[14px] leading-[21px] font-[400]">
+                <p>Add Integra Pack - 4g</p>
+                <p>$2.00</p>
+            </div>
+            <div class="flex justify-between text-[#46494F] text-[14px] leading-[21px] font-[400]">
+                <p>Add Integra Pack - 8g</p>
+                <p>$3.00</p>
+            </div>
+        </div>
+        <div class="border-y border-[#f4f4f4] my-6 py-5 flex justify-between gap-4 flex-wrap">
+            <div class="border-[#f4f4f4] border rounded-[10px] flex gap-4 items-center pe-6 ps-4 py-[6px] lg:py-[10px]">
+                <div class="flex">
+                    <p class="h-[36px] aspect-square flex justify-center items-center">-</p>
+                    <p
+                        class="h-[36px] aspect-square flex justify-center items-center bg-[#f4f4f4] text-[#060709] text-[12px] leading-[18px] font-[400] rounded-[4px]">
+                        2
+                    </p>
+                    <p class="h-[36px] aspect-square flex justify-center items-center">+</p>
+                </div>
+                <p class="text-[#f4f4f4]">|</p>
+                <div class="text-primary text-[12px] leading-[18px] font-[400]">In Stock</div>
+            </div>
+            <div
+                class="h-[48px] lg:h-[56px] rounded-[100px] bg-primary font-medium text-[16px] leading-6 py-0 items-center lg:py-4 px-6 lg:px-8 text-white flex cursor-pointer">
+                <p>Add to Cart</p>
+                <p class="px-4">|</p>
+                <p>$142.00</p>
+            </div>
+        </div>
+        <div
+            class="text-[#46494F] text-[12px] leading-[18px] lg:text-[14px] lg:leading-[21px] font-[400] flex flex-col gap-3">
+            <div class="flex gap-2 items-center">
+                <img src="assets/tick-circle.png" alt="tick-circle">
+                <p>Free Xpress Shipping on orders over <span class="text-[#F2BC1B]">$149</span></p>
+            </div>
+            <div class="flex gap-2 items-center">
+                <img src="assets/tick-circle.png" alt="tick-circle">
+                <p>Order before 12:00pm for same day dispatch</p>
+            </div>
+            <div class="flex gap-2 items-center">
+                <img src="assets/tick-circle.png" alt="tick-circle">
+                <p>Support & ordering open 7 day a week</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="pt-6 flex justify-between gap-3 flex-col lg:flex-row flex-wrap border-t border-[#f4f4f4]">
+        <div class="flex items-center">
+            <p class="text-[#717378] text-[12px] leading-[18px] font-[300] w-[92px]">SKU</p>
+            <p class="text-[#717378]">: </p>
+            <p class="px-2 text-[#060709] text-[14px] leading-[21px]">N/A</p>
+        </div>
+        <div class="flex items-center">
+            <p class="text-[#717378] text-[12px] leading-[18px] font-[300] w-[92px]">Categories</p>
+            <p class="text-[#717378]">: </p>
+            <p class="px-2 text-primary text-[14px] leading-[21px]" *ngFor="let category of product.categories">
+                {{category}}
+            </p>
+        </div>
+    </div>
+
+    <div class="my-8 ">
+        <p class="border-t border-[#C8C9CB]"></p>
+    </div>
+
+    <!-- toggle section -->
+
+    <app-toggle></app-toggle>
+
+</div>

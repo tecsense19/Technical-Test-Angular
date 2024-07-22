@@ -1,0 +1,25 @@
+<div class="mt-[28px] mb-6 flex justify-between gap-3 lg:gap-6 text-[#46494F]">
+    <button (click)="selectComponent('description')"
+        class="py-[7px] px-[19px] md:py-3 md:px-11 rounded-[100px] border border-[#f4f4f4]"
+        [ngClass]="getButtonClass('description')">
+        <p class="text-[12px] leading-[18px] md:text-[16px] md:leading-[24px] font-medium">Description</p>
+    </button>
+    <button (click)="selectComponent('reviews')"
+        class="py-[7px] px-[19px] md:py-3 md:px-11 rounded-[100px] border border-[#f4f4f4]"
+        [ngClass]="getButtonClass('reviews')">
+        <p class="text-[12px] leading-[18px] md:text-[16px] md:leading-[24px] font-medium">Reviews
+            <span class="md:text-[14px] md:leading-[21px]">(350)</span>
+        </p>
+    </button>
+    <button (click)="selectComponent('refer')"
+        class=" py-[7px] px-[19px] md:py-3 md:px-11 rounded-[100px] border border-[#f4f4f4]"
+        [ngClass]="getButtonClass('refer')">
+        <p class="text-[12px] leading-[18px] md:text-[16px] md:leading-[24px] font-medium">Refer a Friend</p>
+    </button>
+</div>
+
+<div>
+    <app-description *ngIf="selectedComponent === 'description'"></app-description>
+    <app-reviews *ngIf="selectedComponent === 'reviews'"></app-reviews>
+    <app-refer-a-friend *ngIf="selectedComponent === 'refer'"></app-refer-a-friend>
+</div>

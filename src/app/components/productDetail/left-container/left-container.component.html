@@ -1,5 +1,31 @@
-<div class="w-full border border-[#F4F4F4] rounded-2xl p-[51px]">
+<!-- <div class="w-full border border-[#F4F4F4] rounded-2xl p-[51px]">
   <div class="w-full aspect-square">
     <img src="assets/preview_img.png" alt="" class="w-full aspect-square object-cover">
   </div>
+</div> -->
+
+<div
+  class="mx-auto max-w-2xl  sm:grid sm:max-w-7xl sm:grid-cols-3 sm:gap-x-8 border border-[#F4F4F4] rounded-[16px]  overflow-auto">
+  <div class="aspect-h-3 aspect-w-3 hidden overflow-hidden rounded-sm sm:block">
+    <img src={{product.imgURL}} alt='' class="h-full w-full object-cover object-center" />
+  </div>
+  <div class="hidden sm:grid sm:grid-cols-1 sm:gap-y-8">
+    <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-sm">
+      <img src={{product.imgURL}} alt='' class="h-full w-full object-cover object-center" />
+    </div>
+    <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-sm">
+      <img src={{product.imgURL}} alt='' class="h-full w-full object-cover object-center" />
+    </div>
+  </div>
+  <div class="aspect-h-5 aspect-w-4 sm:aspect-h-4 sm:aspect-w-3 sm:overflow-hidden sm:rounded-sm">
+    <img src={{product.imgURL}} alt='' class="h-full w-full object-cover object-center" />
+  </div>
+</div>
+
+<div class="flex gap-4 sm:hidden h-[56px] w-[56px] aspect-square pt-4">
+  <img src={{product.imgURL}} alt=''
+    class="h-[56px] rounded-[8px] aspect-square object-cover object-center border border-primary" />
+  <img src={{product.imgURL}} alt='' class="h-[56px] rounded-[8px] aspect-square object-cover object-center" />
+  <img src={{product.imgURL}} alt='' class="h-[56px] rounded-[8px] aspect-square object-cover object-center" />
+  <img src={{product.imgURL}} alt='' class="h-[56px] rounded-[8px] aspect-square object-cover object-center" />
 </div>
