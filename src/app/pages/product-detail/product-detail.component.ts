@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
+import { LeftContainerComponent } from '../../components/productDetail/left-container/left-container.component';
+import { RightContainerComponent } from '../../components/productDetail/right-container/right-container.component';
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [HeaderComponent],
+  imports: [HeaderComponent, LeftContainerComponent, RightContainerComponent],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css'
 })
