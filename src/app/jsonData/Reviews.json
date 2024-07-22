@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "productId": 1,
+    "username": "admin",
+    "rating": 4,
+    "comment": "Great product, highly recommended!",
+    "reviewDate": "2024-06-11T22:12:33.597Z"
+  },
+  {
+    "id": 2,
+    "productId": 1,
+    "username": "admin",
+    "rating": 3,
+    "comment": "Good product, but could be better.",
+    "reviewDate": "2024-06-11T22:12:33.597Z"
+  },
+  {
+    "id": 3,
+    "productId": 1,
+    "username": "admin",
+    "rating": 5,
+    "comment": "Excellent product, highly recommended!",
+    "reviewDate": "2024-06-11T22:12:33.597Z"
+  }
+]
