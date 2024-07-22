@@ -21,6 +21,6 @@ export class ToggleComponent {
   getButtonClass(component: string): string {
     return this.selectedComponent === component
       ? 'bg-[#F2F6F4] border border-[#05422C] text-[#05422C]'
-      : '';
+      : 'border border-[#f4f4f4]';
   }
 }
