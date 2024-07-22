@@ -1,17 +1,19 @@
-<div class='w-full fixed'>
+<div class='w-full'>
   <div
     class='h-[37px] bg-secondary w-full flex justify-center items-center gap-2 lg:gap-4 text-white font-normal text-[10px] lg:text-[14px] leading-[21px]'>
     <p class='text-white/70'>LIMITED OFFER: 30% OFF. Use RABBIT30 at Checkout.</p>
     <p>23:15:00</p>
   </div>
   <div
-    class='h-[56px] lg:h-[76px] py-[14px] px-6 lg:px-[64px] border-b border-[#F4F4F4] flex justify-between items-center'>
-    <div>
+    class='h-[56px] lg:h-[76px] py-[14px] px-3 sm:px-6 lg:px-[64px] border-b border-[#F4F4F4] flex justify-between items-center'>
+    <div class="flex items-center gap-3">
+      <img src="/assets/menu.png" alt="logo" class=' lg:w-auto lg:hidden' />
       <img src="/assets/p_logo.png" alt="logo" class='w-[110px] lg:w-auto' />
     </div>
     <div class='hidden lg:flex max-w-[456px] h-[48px] gap-2'>
-      <div class="w-[400px] h-full rounded-full border border-[#F4F4F4]">
-
+      <div class="w-[400px] h-full rounded-full border border-[#F4F4F4] overflow-hidden">
+        <input type="text" class="h-full w-full outline-none ps-6" placeholder="Search" id="search" name="search"
+          autocomplete="off">
       </div>
       <div class='h-full aspect-square bg-primary rounded-full flex'>
         <img src="/assets/search.png" alt="search" height="18" width="18" class="m-auto">
@@ -27,6 +29,15 @@
           <p class="text-[11px]">0</p>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="lg:hidden h-[60px] flex gap-2 items-center justify-center border border-[#F4F4F4]">
+    <div class="w-[80%] h-[36px] rounded-[100px] border border-[#F4F4F4] overflow-hidden">
+      <input type="text" class="h-full w-full outline-none ps-6" placeholder="Search" id="search" name="search"
+        autocomplete="off">
+    </div>
+    <div class='h-[36px] aspect-square bg-primary rounded-full flex'>
+      <img src="/assets/search.png" alt="search" height="18" width="18" class="m-auto">
     </div>
   </div>
 </div>
