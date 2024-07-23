@@ -2,11 +2,12 @@ import { NgFor } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { ToggleComponent } from '../toggle/toggle.component';
 import { FormsModule } from '@angular/forms';
+import { CartContainerComponent } from '../cart-container/cart-container.component';
 
 @Component({
   selector: 'app-right-container',
   standalone: true,
-  imports: [NgFor, ToggleComponent, FormsModule],
+  imports: [NgFor, ToggleComponent, FormsModule, CartContainerComponent],
   templateUrl: './right-container.component.html',
   styleUrl: './right-container.component.css'
 })

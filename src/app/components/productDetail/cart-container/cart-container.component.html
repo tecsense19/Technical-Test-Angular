@@ -1,0 +1,97 @@
+<div class="my-5 flex justify-between flex-wrap gap-6">
+    <div>
+        <p class="text-[#717378] text-[12px] leading-[18px] font-[300] uppercase tracking-[1px]">Weight</p>
+        <div class="mt-3 flex gap-4">
+            <div class="bg-[#F3FBF4] border border-primary rounded-[4px] py-1 px-[14px] h-[36px] flex">
+                <p class="text-[12px] leading-[18px] font-[400] text-[#060709] m-auto">28g</p>
+            </div>
+            <div
+                class="bg-[#F4F4F4] border border-[#F4F4F4] rounded-[4px] py-1 px-[14px] h-[36px] flex pointer-events-none">
+                <p class="text-[12px] leading-[18px] font-[400] text-[#060709] m-auto">1/2lb</p>
+            </div>
+            <div
+                class="bg-[#F4F4F4] border border-[#F4F4F4] rounded-[4px] py-1 px-[14px] h-[36px] flex pointer-events-none">
+                <p class="text-[12px] leading-[18px] font-[400] text-[#060709] m-auto">1/4lb</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <p class="text-[#717378] text-[12px] leading-[18px] font-[300] uppercase tracking-[1px]">Add Integra Pack
+        </p>
+        <div class="mt-3 flex gap-4">
+            <div class="flex items-center gap-2">
+                <input type="checkbox" id="4g" class="custom-checkbox" [(ngModel)]="integra4g">
+                <label for="4g" class="text-[14px] leading-[21px]">4g (+$2.00)</label>
+            </div>
+            <div class="flex items-center gap-2">
+                <input type="checkbox" id="8g" class="custom-checkbox" [(ngModel)]="integra8g">
+                <label for="8g" class="text-[14px] leading-[21px]">8g (+$3.00)</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-[#FEF8E8] px-[14px] py-1 rounded-full inline-flex h-9">
+    <p class="text-[14px] leading-[21px] font-[400] text-[#46494F] m-auto">Purchase this product now and earn <span
+            class="text-red-primary">80</span> Points!</p>
+</div>
+
+<div class="my-5 border border-[#f4f4f4] rounded-[16px] p-6">
+    <div class="flex flex-col gap-3">
+        <div class="flex justify-between text-[#46494F] text-[14px] leading-[21px] font-[400]">
+            <p>Khalifa Kush (AAAA)</p>
+            <p class="text-[#060709]">${{price}}</p>
+        </div>
+        @if (integra4g) {
+        <div class="flex justify-between text-[#46494F] text-[14px] leading-[21px] font-[400]">
+            <p>Add Integra Pack - 4g</p>
+            <p class="text-[#060709]">$2.00</p>
+        </div>
+        }
+        @if (integra8g) {
+        <div class="flex justify-between text-[#46494F] text-[14px] leading-[21px] font-[400]">
+            <p>Add Integra Pack - 8g</p>
+            <p class="text-[#060709]">$3.00</p>
+        </div>
+        }
+    </div>
+    <div class="border-y border-[#f4f4f4] my-6 py-5 flex justify-between gap-4 flex-wrap">
+        <div class="border-[#f4f4f4] border rounded-[10px] flex gap-4 items-center pe-6 ps-4 py-[6px] lg:py-[10px]">
+            <div class="flex">
+                <button [class]="quantity === 1 ? 'pointer-events-none' : ''"
+                    class="h-[36px] aspect-square flex justify-center items-center"
+                    (click)="handleQuantityChange('-')">-</button>
+                <p
+                    class="h-[36px] aspect-square flex justify-center items-center bg-[#f4f4f4] text-[#060709] text-[12px] leading-[18px] font-[400] rounded-[4px]">
+                    {{quantity}}
+                </p>
+                <button [class]="quantity === 10 ? 'pointer-events-none' : ''"
+                    class="h-[36px] aspect-square flex justify-center items-center"
+                    (click)="handleQuantityChange('+')">+</button>
+            </div>
+            <p class="text-[#f4f4f4]">|</p>
+            <div class="text-primary text-[12px] leading-[18px] font-[400]">In Stock</div>
+        </div>
+        <div
+            class="h-[48px] lg:h-[56px] rounded-[100px] bg-primary font-medium text-[16px] leading-6 py-0 items-center lg:py-4 px-6 lg:px-8 text-white flex cursor-pointer">
+            <p>Add to Cart</p>
+            <p class="px-4">|</p>
+            <p>${{getPrice()}}</p>
+        </div>
+    </div>
+    <div
+        class="text-[#46494F] text-[12px] leading-[18px] lg:text-[14px] lg:leading-[21px] font-[400] flex flex-col gap-3">
+        <div class="flex gap-2 items-center">
+            <img src="assets/tick-circle.png" alt="tick-circle">
+            <p>Free Xpress Shipping on orders over <span class="text-[#F2BC1B]">$149</span></p>
+        </div>
+        <div class="flex gap-2 items-center">
+            <img src="assets/tick-circle.png" alt="tick-circle">
+            <p>Order before 12:00pm for same day dispatch</p>
+        </div>
+        <div class="flex gap-2 items-center">
+            <img src="assets/tick-circle.png" alt="tick-circle">
+            <p>Support & ordering open 7 day a week</p>
+        </div>
+    </div>
+</div>
