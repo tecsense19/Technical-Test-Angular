@@ -1,16 +1,21 @@
 import { Component } from '@angular/core';
 import reviewJson from "../../../jsonData/Reviews.json";
+import { DatePipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-reviews',
   standalone: true,
-  imports: [],
+  imports: [NgFor, NgIf, DatePipe],
   templateUrl: './reviews.component.html',
   styleUrl: './reviews.component.css'
 })
 export class ReviewsComponent {
-  constructor() {
-    console.log(reviewJson);
+  reviews = reviewJson
 
+  displayedReviews = 2;
+
+  showMoreReviews() {
+    this.displayedReviews += 2;
   }
+
 }

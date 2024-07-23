@@ -5,6 +5,7 @@
     "username": "admin",
     "rating": 4,
     "comment": "Great product, highly recommended!",
+    "imageUrl": "assets/image-2.png",
     "reviewDate": "2024-06-11T22:12:33.597Z"
   },
   {
@@ -12,6 +13,7 @@
     "productId": 1,
     "username": "admin",
     "rating": 3,
+    "imageUrl": "assets/image.png",
     "comment": "Good product, but could be better.",
     "reviewDate": "2024-06-11T22:12:33.597Z"
   },
