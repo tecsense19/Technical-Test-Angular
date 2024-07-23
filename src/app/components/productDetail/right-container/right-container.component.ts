@@ -1,4 +1,3 @@
-import { NgFor } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { ToggleComponent } from '../toggle/toggle.component';
 import { FormsModule } from '@angular/forms';
@@ -8,7 +7,7 @@ import reviewJson from "../../../jsonData/Reviews.json";
 @Component({
   selector: 'app-right-container',
   standalone: true,
-  imports: [NgFor, ToggleComponent, FormsModule, CartContainerComponent],
+  imports: [ToggleComponent, FormsModule, CartContainerComponent],
   templateUrl: './right-container.component.html',
   styleUrl: './right-container.component.css'
 })

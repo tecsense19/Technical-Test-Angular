@@ -9,10 +9,11 @@
     <!-- categories -->
 
     <div class="flex my-3 lg:my-4 gap-4 h-[28px] lg:h-[36px]">
-        <div class="h-full bg-[#F2F6F4] px-[10px] lg:px-4 flex rounded-[8px]"
-            *ngFor="let category of product.categories">
+        @for (category of product.categories; track $index) {
+        <div class="h-full bg-[#F2F6F4] px-[10px] lg:px-4 flex rounded-[8px]">
             <p class="m-auto text-[12px] leading-[18px] text-secondary font-normal">{{category}}</p>
         </div>
+        }
     </div>
 
     <!-- pricing & product rating section -->
@@ -41,7 +42,8 @@
     <!-- product-features -->
 
     <div class="my-5 rounded-[8px] border border-[#F4F4F4] py-5 px-6 flex flex-col gap-5">
-        <div *ngFor="let feature of features" class="flex gap-4">
+        @for (feature of features; track $index) {
+        <div class="flex gap-4">
             <img [src]='feature.icon' alt="icon" class="h-[32px] w-[32px]">
             <div>
                 <p class="text-[#717378] text-[12px] leading-[18px] font-[300] uppercase tracking-[1px]">
@@ -50,6 +52,7 @@
                 </p>
             </div>
         </div>
+        }
     </div>
 
     <!-- product description -->
@@ -72,9 +75,11 @@
         <div class="flex items-center">
             <p class="text-[#717378] text-[12px] leading-[18px] font-[300] w-[92px]">Categories</p>
             <p class="text-[#717378]">: </p>
-            <p class="px-2 text-primary text-[14px] leading-[21px]" *ngFor="let category of product.categories">
+            @for (category of product.categories; track $index) {
+            <p class="px-2 text-primary text-[14px] leading-[21px]">
                 {{category}}
             </p>
+            }
         </div>
     </div>
 

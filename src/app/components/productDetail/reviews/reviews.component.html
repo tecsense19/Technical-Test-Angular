@@ -1,16 +1,17 @@
 <div class="w-full flex flex-col gap-5">
-    <div *ngFor="let review of reviews.slice(0, displayedReviews)"
-        class="border border-[#f4f4f4] rounded-[16px] w-full p-6 flex flex-col gap-4 ">
+    @for (review of reviews.slice(0, displayedReviews); track $index) {
+    <div class="border border-[#f4f4f4] rounded-[16px] w-full p-6 flex flex-col gap-4 ">
         <div class="flex gap-4 items-center">
-            <div *ngIf="review.imageUrl; else usernameInitial">
+            @if(review.imageUrl) {
+            <div>
                 <img [src]="review.imageUrl" alt="user" class="h-9 w-9">
             </div>
-            <ng-template #usernameInitial>
-                <div
-                    class="h-9 w-9 rounded-full bg-gray-300 flex items-center justify-center text-secondary text-lg uppercase">
-                    {{ review.username[0] }}
-                </div>
-            </ng-template>
+            } @else {
+            <div
+                class="h-9 w-9 rounded-full bg-gray-300 flex items-center justify-center text-secondary text-lg uppercase">
+                {{ review.username[0] }}
+            </div>
+            }
             <p class="text-[#1A1E26] text-[16px] leading-[24px] capitalize">{{ review.username }}</p>
             <p class="text-[#f4f4f4]">|</p>
             <p class="text-[#9D9EA2] text-[14px] leading-[21px] mt-1">{{ review.reviewDate | date:'MMMM d, y' }}</p>
@@ -18,76 +19,59 @@
         <p class="w-full border-t border-[#f4f4f4]"></p>
         <div class="flex flex-col gap-4">
             <div class="flex gap-1 items-center">
-                <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
-                    <ng-container *ngIf="i < review.rating; else emptyStar">
-                        <img src="assets/star.png" alt="star" class="w-4 h-4">
-                    </ng-container>
-                    <ng-template #emptyStar>
-                        <img src="assets/star-white.png" alt="star" class="w-4 h-4">
-                    </ng-template>
-                </ng-container>
+                @for (star of [1, 2, 3, 4, 5]; track $index) {
+                @if ($index < review.rating) { <img src="assets/star.png" alt="star" class="w-4 h-4">
+                    }
+                    @else { <img src="assets/star-white.png" alt="star" class="w-4 h-4"> }
+                    }
             </div>
             <p class="text-[#1A1E26] text-[16px] leading-[24px]">{{ review.comment }}</p>
         </div>
     </div>
-    <div *ngIf="displayedReviews < reviews.length" class="flex justify-center mt-5">
+    }
+    @if(displayedReviews < reviews.length) { <div class="flex justify-center mt-5">
         <button (click)="showMoreReviews()"
             class="border border-[#f4f4f4] px-6 h-10  text-primary rounded-full hover:bg-primary hover:text-white text-[14px] leading-[21px] transition-all duration-150 ease-linear">
             Show More
         </button>
-    </div>
-    <p class="w-full border-t border-[#f4f4f4] my-6"></p>
+</div>
+}
+<p class="w-full border-t border-[#f4f4f4] my-6"></p>
 
-    <!-- Adding new Review -->
-    <!-- <div>
-        <p class="text-[#060709] text-[18px] leading-[27px] capitalize">Add A review</p>
-        <div class="flex gap-4 items-center mt-6">
-            <p class="text-[#46494F] text-[14px] leading-[21px]">Your rating</p>
-            <p>:</p>
-            <div class="flex gap-1">
-                <img src="assets/plain-star.png" alt="empty star" class="h-6 w-6">
-                <img src="assets/plain-star.png" alt="empty star" class="h-6 w-6">
-                <img src="assets/plain-star.png" alt="empty star" class="h-6 w-6">
-                <img src="assets/plain-star.png" alt="empty star" class="h-6 w-6">
-                <img src="assets/plain-star.png" alt="empty star" class="h-6 w-6">
+<!-- Adding new Review -->
+
+<div>
+    <p class="text-[#060709] text-[18px] leading-[27px] capitalize">Add A Review</p>
+    <div class="flex gap-4 items-center mt-6">
+        <p class="text-[#46494F] text-[14px] leading-[21px]">Your rating</p>
+        <p>:</p>
+        <div class="flex gap-1">
+            @for (star of stars; track $index) {
+            <div class="" (click)="rate($index + 1)">
+                <img src="assets/plain-star.png" alt="empty star" class="h-6 w-6 cursor-pointer"
+                    [class]="rating < ($index + 1) ? '' : 'hidden'">
+                <img src="assets/star.png" alt="empty star" class="h-6 w-6 cursor-pointer"
+                    [class]="rating >= ($index + 1) ? '' : 'hidden'">
             </div>
-        </div>
-        <div class="mt-4">
-            <p class="text-[#46494F] text-[14px] leading-[21px]">Your Review <span class="text-[#EB2606]">*</span></p>
-            <textarea name="review" id="review"
-                class="mt-2 p-4 border border-[#f4f4f4] w-full rounded-[8px] outline-none h-[93px]"
-                placeholder="Enter your review"></textarea>
-            <button class="bg-primary h-[56px] px-10 rounded-full my-4 text-[16px] leading-6 text-white">Submit</button>
-        </div>
-    </div> -->
+            }
 
-    <div>
-        <p class="text-[#060709] text-[18px] leading-[27px] capitalize">Add A Review</p>
-        <div class="flex gap-4 items-center mt-6">
-            <p class="text-[#46494F] text-[14px] leading-[21px]">Your rating</p>
-            <p>:</p>
-            <div class="flex gap-1">
-                @for (star of stars; track $index) {
-                <div class="" (click)="rate($index + 1)">
-                    <img src="assets/plain-star.png" alt="empty star" class="h-6 w-6 cursor-pointer"
-                        [class]="rating < ($index + 1) ? '' : 'hidden'">
-                    <img src="assets/star.png" alt="empty star" class="h-6 w-6 cursor-pointer"
-                        [class]="rating >= ($index + 1) ? '' : 'hidden'">
-                </div>
-                }
-
-            </div>
-        </div>
-        <div class="mt-4">
-            <p class="text-[#46494F] text-[14px] leading-[21px]">Your Review <span class="text-[#EB2606]">*</span></p>
-            <textarea name="review" id="review"
-                class="mt-2 p-4 border border-[#f4f4f4] w-full rounded-[8px] outline-none h-[93px]"
-                placeholder="Enter your review" [(ngModel)]="reviewText"></textarea>
-            <button (click)="submitReview()"
-                class="bg-primary h-[56px] px-10 rounded-full my-4 text-[16px] leading-6 text-white">Submit</button>
         </div>
     </div>
-
-    <app-modal *ngIf="isModalOpen" [reviewText]="reviewText" [rating]="rating" (close)="handleModalClose()"></app-modal>
+    <div class="mt-4">
+        <p class="text-[#46494F] text-[14px] leading-[21px]">Your Review <span class="text-[#EB2606]">*</span></p>
+        <textarea name="review" id="review"
+            class="mt-2 p-4 border border-[#f4f4f4] w-full rounded-[8px] outline-none h-[93px]"
+            placeholder="Enter your review" [(ngModel)]="reviewText">
+        </textarea>
+        <button (click)="submitReview()" [disabled]="isSubmitDisabled()"
+            class="bg-primary h-[56px] px-10 rounded-full my-4 text-[16px] leading-6 text-white"
+            [class]="isSubmitDisabled() ? 'cursor-not-allowed opacity-80' :''">
+            Submit
+        </button>
+    </div>
+</div>
+@if (isModalOpen) {
+<app-modal [reviewText]="reviewText" [rating]="rating" (close)="handleModalClose()"></app-modal>
+}
 
 </div>

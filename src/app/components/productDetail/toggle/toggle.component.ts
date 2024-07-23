@@ -2,12 +2,11 @@ import { Component, Input } from '@angular/core';
 import { DescriptionComponent } from '../description/description.component';
 import { ReferAFriendComponent } from '../refer-a-friend/refer-a-friend.component';
 import { ReviewsComponent } from '../reviews/reviews.component';
-import { NgClass, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-toggle',
   standalone: true,
-  imports: [DescriptionComponent, ReferAFriendComponent, ReviewsComponent, NgIf, NgClass],
+  imports: [DescriptionComponent, ReferAFriendComponent, ReviewsComponent],
   templateUrl: './toggle.component.html',
   styleUrl: './toggle.component.css'
 })

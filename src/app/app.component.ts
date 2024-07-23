@@ -11,6 +11,7 @@ import { NotificationComponent } from './components/notification/notification.co
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent {
   title = 'angular-technical-test';
 }
