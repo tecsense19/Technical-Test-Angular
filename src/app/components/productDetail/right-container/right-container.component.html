@@ -1,7 +1,8 @@
 <div class="">
-    <p class="uppercase text-[#9D9EA2] text-[14px] leading-[21px] pb-3 lg:pb-4">CONCENTRATES</p>
+    <p class="uppercase text-[#9D9EA2] text-[14px] leading-[21px] pb-3 lg:pb-4 tracking-[2px] lg:tracking-[4px]">
+        CONCENTRATES</p>
     <p
-        class="text-[#060709] font-medium text-[20px] leading-[30px] lg:font-semibold lg:text-[32px] lg:leading-[38.4px]">
+        class="text-[#060709] font-medium text-[20px] leading-[30px] lg:font-semibold lg:text-[32px] lg:leading-[38.4px] tracking-[-1px]">
         {{product.name}}
     </p>
 
@@ -43,8 +44,10 @@
         <div *ngFor="let feature of features" class="flex gap-4">
             <img [src]='feature.icon' alt="icon" class="h-[32px] w-[32px]">
             <div>
-                <p class="text-[#717378] text-[12px] leading-[18px] font-[300] uppercase">{{feature.title}}</p>
-                <p class="text-[#060709] text-[14px] leading-[21px] font-[400] pt-[6px]">{{feature.desc}}</p>
+                <p class="text-[#717378] text-[12px] leading-[18px] font-[300] uppercase tracking-[1px]">
+                    {{feature.title}}</p>
+                <p class="text-[#060709] text-[14px] leading-[21px] font-[400] pt-[6px] lg:pt-[10px]">{{feature.desc}}
+                </p>
             </div>
         </div>
     </div>
@@ -52,27 +55,28 @@
     <!-- product description -->
 
     <div class="border-b border-[#F4F4F4] pb-6">
-        <p class="text-[#717378] text-[12px] leading-[18px] font-[300] uppercase">Description</p>
-        <p>{{product.description}}</p>
+        <p class="text-[#717378] text-[12px] leading-[18px] font-[300] uppercase tracking-[1px]">Description</p>
+        <p class="text-[#46494F] text-[14px] leading-[21px] pt-3">{{product.description}}</p>
     </div>
 
     <div class="my-5 flex justify-between flex-wrap gap-6">
         <div>
-            <p class="text-[#717378] text-[12px] leading-[18px] font-[300] uppercase">Weight</p>
+            <p class="text-[#717378] text-[12px] leading-[18px] font-[300] uppercase tracking-[1px]">Weight</p>
             <div class="mt-3 flex gap-4">
-                <div class="bg-[#F3FBF4] border border-primary rounded-[4px] py-1 px-[14px] ">
-                    <p class="text-[12px] leading-[18px] font-[400] text-[#060709]">28g</p>
+                <div class="bg-[#F3FBF4] border border-primary rounded-[4px] py-1 px-[14px] h-[36px] flex">
+                    <p class="text-[12px] leading-[18px] font-[400] text-[#060709] m-auto">28g</p>
                 </div>
-                <div class="bg-[#F4F4F4] border border-[#F4F4F4] rounded-[4px] py-1 px-[14px] ">
-                    <p class="text-[12px] leading-[18px] font-[400] text-[#060709]">1/2lb</p>
+                <div class="bg-[#F4F4F4] border border-[#F4F4F4] rounded-[4px] py-1 px-[14px] h-[36px] flex">
+                    <p class="text-[12px] leading-[18px] font-[400] text-[#060709] m-auto">1/2lb</p>
                 </div>
-                <div class="bg-[#F4F4F4] border border-[#F4F4F4] rounded-[4px] py-1 px-[14px] ">
-                    <p class="text-[12px] leading-[18px] font-[400] text-[#060709]">1/4lb</p>
+                <div class="bg-[#F4F4F4] border border-[#F4F4F4] rounded-[4px] py-1 px-[14px] h-[36px] flex">
+                    <p class="text-[12px] leading-[18px] font-[400] text-[#060709] m-auto">1/4lb</p>
                 </div>
             </div>
         </div>
         <div>
-            <p class="text-[#717378] text-[12px] leading-[18px] font-[300] uppercase">Add Integra Pack</p>
+            <p class="text-[#717378] text-[12px] leading-[18px] font-[300] uppercase tracking-[1px]">Add Integra Pack
+            </p>
             <div class="mt-3 flex gap-4">
                 <div class="flex items-center gap-2">
                     <input type="checkbox" id="4g" class="custom-checkbox">
@@ -86,8 +90,8 @@
         </div>
     </div>
 
-    <div class="bg-[#FEF8E8] px-[14px] py-1 rounded-full inline-block pt-1">
-        <p class="text-[14px] leading-[21px] font-[400] text-[#46494F]">Purchase this product now and earn <span
+    <div class="bg-[#FEF8E8] px-[14px] py-1 rounded-full inline-flex h-9">
+        <p class="text-[14px] leading-[21px] font-[400] text-[#46494F] m-auto">Purchase this product now and earn <span
                 class="text-red-primary">80</span> Points!</p>
     </div>
 
