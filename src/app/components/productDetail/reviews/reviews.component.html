@@ -15,7 +15,7 @@
             <p class="text-[#f4f4f4]">|</p>
             <p class="text-[#9D9EA2] text-[14px] leading-[21px] mt-1">{{ review.reviewDate | date:'MMMM d, y' }}</p>
         </div>
-        <p class="w-full border border-[#f4f4f4]"></p>
+        <p class="w-full border-t border-[#f4f4f4]"></p>
         <div class="flex flex-col gap-4">
             <div class="flex gap-1 items-center">
                 <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
@@ -32,7 +32,7 @@
     </div>
     <div *ngIf="displayedReviews < reviews.length" class="flex justify-center mt-5">
         <button (click)="showMoreReviews()"
-            class="border border-[#f4f4f4] px-6 h-10  text-primary rounded-full hover:bg-primary hover:text-secondary text-[14px] leading-[21px]">
+            class="border border-[#f4f4f4] px-6 h-10  text-primary rounded-full hover:bg-primary hover:text-white text-[14px] leading-[21px] transition-all duration-150 ease-linear">
             Show More
         </button>
     </div>
