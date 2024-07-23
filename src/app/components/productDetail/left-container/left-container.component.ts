@@ -9,4 +9,18 @@ import { Component, Input } from '@angular/core';
 })
 export class LeftContainerComponent {
   @Input() product: any;
+
+  currentImage: string | any = 1
+
+  selectComponent(component: any): void {
+    this.currentImage = component;
+  }
+
+  getButtonClass(component: any): string {
+    return this.currentImage === component
+      ? ''
+      : '';
+  }
+
+
 }
