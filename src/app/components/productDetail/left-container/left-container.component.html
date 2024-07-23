@@ -1,19 +1,20 @@
-<div class="mx-auto  border border-[#F4F4F4] rounded-[16px]  overflow-auto relative">
-  <div>
-    <img src={{product.imgURL}} alt='' class="h-full w-full object-cover object-center mix-blend-screen" />
+<div class="sticky top-10 left-0">
+  <div class="mx-auto  border border-[#F4F4F4] rounded-2xl overflow-auto relative">
+    <div class="relative bg-white p-[50px]">
+      <img src={{product.imgURL}} alt='' class="h-full w-full object-cover object-center" />
+      <img src="assets/product_img_shadow.png" alt=''
+        class="h-full w-full object-cover object-center absolute top-0 left-0 z-[-1]" />
+    </div>
+    <div class="absolute bottom-4 right-4 h-8 w-8 rounded-full bg-white shadow flex cursor-pointer">
+      <img src="assets/export.png" alt="export" class="h-4 w-4 m-auto">
+    </div>
   </div>
-  <div class="absolute bottom-4 right-4 h-8 w-8 rounded-full bg-white shadow flex">
-    <img src="assets/export.png" alt="export" class="h-4 w-4 m-auto">
-  </div>
-</div>
 
-<div class="flex gap-4  h-[56px] w-[56px] aspect-square pt-4">
-  <img src={{product.imgURL}} alt='' (click)="selectComponent(1)"
-    class="h-[56px] rounded-[8px] aspect-square object-cover object-center border border-primary cursor-pointer" />
-  <img src={{product.imgURL}} (click)="selectComponent(2)" alt=''
-    class="h-[56px] rounded-[8px] aspect-square object-cover object-center cursor-pointer" />
-  <img src={{product.imgURL}} (click)="selectComponent(3)" alt=''
-    class="h-[56px] rounded-[8px] aspect-square object-cover object-center cursor-pointer" />
-  <img src={{product.imgURL}} (click)="selectComponent(4)" alt=''
-    class="h-[56px] rounded-[8px] aspect-square object-cover object-center cursor-pointer" />
+  <div class="flex gap-4 mt-4">
+    @for (item of counter(4); track $index) {
+    <img src={{product.imgURL}} alt='' (click)="selectComponent($index)"
+      [class]="currentImage === $index ? 'border border-primary' : 'border border-transparent'"
+      class="h-[56px] rounded-[8px] aspect-square object-cover object-center cursor-pointer" />
+    }
+  </div>
 </div>

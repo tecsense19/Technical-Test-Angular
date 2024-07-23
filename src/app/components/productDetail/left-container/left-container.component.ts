@@ -10,17 +10,14 @@ import { Component, Input } from '@angular/core';
 export class LeftContainerComponent {
   @Input() product: any;
 
-  currentImage: string | any = 1
+  currentImage: string | any = 0;
 
-  selectComponent(component: any): void {
-    this.currentImage = component;
+  selectComponent(activeNum: any): void {
+    this.currentImage = activeNum;
   }
 
-  getButtonClass(component: any): string {
-    return this.currentImage === component
-      ? ''
-      : '';
+  counter(i: number) {
+    return new Array(i);
   }
-
 
 }
