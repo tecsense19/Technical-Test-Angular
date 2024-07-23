@@ -1,18 +1,21 @@
 <div class="mt-[28px] mb-6 flex justify-between gap-3 lg:gap-6 text-[#46494F] border-b pb-6 border-[#f4f4f4]">
     <button (click)="selectComponent('description')"
-        class="py-[7px] px-[19px] md:py-3 md:px-11 rounded-[100px] line-clamp-1 "
+        class="py-[7px] px-[19px] md:py-3 md:px-5 2xl:px-11 rounded-[100px] transition-all duration-150 ease-linear hover:bg-[#F2F6F4] hover:border-[#05422C] hover:text-[#05422C]"
         [ngClass]="getButtonClass('description')">
-        <p class="text-[12px] leading-[18px] md:text-[16px] md:leading-[24px] font-medium">Description</p>
+        <p class="text-[12px] leading-[18px] md:text-[16px] md:leading-[24px] font-medium line-clamp-1">Description</p>
     </button>
-    <button (click)="selectComponent('reviews')" class="py-[7px] px-[10px] md:py-3 md:px-11 rounded-[100px]"
+    <button (click)="selectComponent('reviews')"
+        class="py-[7px] px-[10px] md:py-3 md:px-5 2xl:px-11 rounded-[100px] transition-all duration-150 ease-linear hover:bg-[#F2F6F4] hover:border-[#05422C] hover:text-[#05422C]"
         [ngClass]="getButtonClass('reviews')">
         <p class="text-[12px] leading-[18px] md:text-[16px] md:leading-[24px] font-medium line-clamp-1">Reviews
-            <span class="md:text-[14px] md:leading-[21px] text-[#9D9EA2]">(350)</span>
+            <span class="md:text-[14px] md:leading-[21px] text-[#9D9EA2]">({{reviewData.length}})</span>
         </p>
     </button>
-    <button (click)="selectComponent('refer')" class=" py-[7px] px-[11px] md:py-3 md:px-11 rounded-[100px] line-clamp-1"
+    <button (click)="selectComponent('refer')"
+        class="py-[7px] px-[11px] md:py-3 md:px-5 xl:px-11 rounded-[100px] transition-all duration-150 ease-linear hover:bg-[#F2F6F4] hover:border-[#05422C] hover:text-[#05422C]"
         [ngClass]="getButtonClass('refer')">
-        <p class="text-[12px] leading-[18px] md:text-[16px] md:leading-[24px] font-medium">Refer a Friend</p>
+        <p class="text-[12px] leading-[18px] md:text-[16px] md:leading-[24px] font-medium line-clamp-1">Refer a Friend
+        </p>
     </button>
 </div>
 

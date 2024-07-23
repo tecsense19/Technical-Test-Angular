@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { ToggleComponent } from '../toggle/toggle.component';
 import { FormsModule } from '@angular/forms';
 import { CartContainerComponent } from '../cart-container/cart-container.component';
+import reviewJson from "../../../jsonData/Reviews.json";
 
 @Component({
   selector: 'app-right-container',
@@ -13,6 +14,7 @@ import { CartContainerComponent } from '../cart-container/cart-container.compone
 })
 export class RightContainerComponent {
   @Input() product: any;
+  reviewData = reviewJson;
   price: number = 0;
   integra4g: boolean = true;
   integra8g: boolean = true;
@@ -37,23 +39,6 @@ export class RightContainerComponent {
 
   ngOnInit() {
     this.price = this.product.price;
-  }
-
-  handleQuantityChange(type: string) {
-    if (type === '-') {
-      if (this.quantity > 1) {
-        this.quantity--;
-      }
-    } else {
-      if (this.quantity < 10) {
-        this.quantity++;
-      }
-    }
-  }
-
-  getPrice() {
-    let qPrice = this.price * this.quantity;
-    let otherPrice = (this.integra4g ? 2 : 0) + (this.integra8g ? 3 : 0);
-    return qPrice + otherPrice;
+    this.quantity = this.product.stockUnit;
   }
 }

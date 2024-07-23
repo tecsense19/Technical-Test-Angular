@@ -11,9 +11,10 @@ import { FormsModule } from '@angular/forms';
 export class CartContainerComponent {
   @Input() product: any;
   @Input() price: number = 0;
-  @Input() integra4g: boolean = true;
-  @Input() integra8g: boolean = true;
-  @Input() quantity: number = 2;
+  @Input() integra4g: boolean | any;
+  @Input() integra8g: boolean | any;
+  @Input() quantity: number | any;
+  selectedWeight: string = "28g";
 
   handleQuantityChange(type: string) {
     if (type === '-') {
@@ -21,7 +22,7 @@ export class CartContainerComponent {
         this.quantity--;
       }
     } else {
-      if (this.quantity < 10) {
+      if (this.quantity < this.product.stockQuantity) {
         this.quantity++;
       }
     }
@@ -31,5 +32,13 @@ export class CartContainerComponent {
     let qPrice = this.price * this.quantity;
     let otherPrice = (this.integra4g ? 2 : 0) + (this.integra8g ? 3 : 0);
     return qPrice + otherPrice;
+  }
+
+  handleWeightChange(weight: string) {
+    this.selectedWeight = weight;
+  }
+
+  getSelectedWeightClass(weight: string) {
+    return this.selectedWeight === weight ? 'bg-[#F3FBF4] border border-primary' : 'bg-[#F4F4F4] border border-[#F4F4F4]'
   }
 }

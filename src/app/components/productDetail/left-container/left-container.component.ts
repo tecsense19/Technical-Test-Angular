@@ -10,7 +10,7 @@ import { Component, Input } from '@angular/core';
 export class LeftContainerComponent {
   @Input() product: any;
 
-  currentImage: string | any = 0;
+  currentImage: number | any = 0;
 
   selectComponent(activeNum: any): void {
     this.currentImage = activeNum;
@@ -18,6 +18,10 @@ export class LeftContainerComponent {
 
   counter(i: number) {
     return new Array(i);
+  }
+
+  getActiveProductClass(num: number) {
+    return this.currentImage === num ? 'border border-primary' : 'border border-transparent'
   }
 
 }

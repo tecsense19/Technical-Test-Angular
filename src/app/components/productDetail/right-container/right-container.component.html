@@ -32,7 +32,7 @@
             </div>
             <div class="text-[#C8C9CB]">|</div>
             <div class="flex items-center justify-center gap-1">
-                <p class="text-[16px] leading-[24px] text-[#060709]">135</p>
+                <p class="text-[16px] leading-[24px] text-[#060709]">{{reviewData.length}}</p>
                 <p class="text-[#9D9EA2] text-[14px] leading-[21px]">Reviews</p>
             </div>
         </div>
@@ -84,6 +84,6 @@
 
     <!-- toggle section -->
 
-    <app-toggle></app-toggle>
+    <app-toggle [reviewData]="reviewData"></app-toggle>
 
 </div>

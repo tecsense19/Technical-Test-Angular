@@ -2,15 +2,16 @@
     <div>
         <p class="text-[#717378] text-[12px] leading-[18px] font-[300] uppercase tracking-[1px]">Weight</p>
         <div class="mt-3 flex gap-4">
-            <div class="bg-[#F3FBF4] border border-primary rounded-[4px] py-1 px-[14px] h-[36px] flex">
+            <div class="rounded-[4px] py-1 px-[14px] h-[36px] flex cursor-pointer transition-all duration-150 ease-linear hover:bg-[#F3FBF4] hover:border-primary"
+                [class]="getSelectedWeightClass('28g')" (click)="handleWeightChange('28g')">
                 <p class="text-[12px] leading-[18px] font-[400] text-[#060709] m-auto">28g</p>
             </div>
-            <div
-                class="bg-[#F4F4F4] border border-[#F4F4F4] rounded-[4px] py-1 px-[14px] h-[36px] flex pointer-events-none">
+            <div class="rounded-[4px] py-1 px-[14px] h-[36px] flex cursor-pointer transition-all duration-150 ease-linear hover:bg-[#F3FBF4] hover:border-primary"
+                [class]="getSelectedWeightClass('1/2lb')" (click)="handleWeightChange('1/2lb')">
                 <p class="text-[12px] leading-[18px] font-[400] text-[#060709] m-auto">1/2lb</p>
             </div>
-            <div
-                class="bg-[#F4F4F4] border border-[#F4F4F4] rounded-[4px] py-1 px-[14px] h-[36px] flex pointer-events-none">
+            <div class="rounded-[4px] py-1 px-[14px] h-[36px] flex cursor-pointer transition-all duration-150 ease-linear hover:bg-[#F3FBF4] hover:border-primary"
+                [class]="getSelectedWeightClass('1/4lb')" (click)="handleWeightChange('1/4lb')">
                 <p class="text-[12px] leading-[18px] font-[400] text-[#060709] m-auto">1/4lb</p>
             </div>
         </div>
@@ -31,7 +32,7 @@
     </div>
 </div>
 
-<div class="bg-[#FEF8E8] px-[14px] py-1 rounded-full inline-flex h-9">
+<div class="bg-[#FEF8E8] px-[18px] py-2 rounded-full inline-flex min-h-9">
     <p class="text-[14px] leading-[21px] font-[400] text-[#46494F] m-auto">Purchase this product now and earn <span
             class="text-red-primary">80</span> Points!</p>
 </div>
@@ -59,24 +60,24 @@
         <div class="border-[#f4f4f4] border rounded-[10px] flex gap-4 items-center pe-6 ps-4 py-[6px] lg:py-[10px]">
             <div class="flex">
                 <button [class]="quantity === 1 ? 'pointer-events-none' : ''"
-                    class="h-[36px] aspect-square flex justify-center items-center"
+                    class="h-[36px] aspect-square flex justify-center items-center hover:bg-[#F2F6F4] transition-all duration-150 ease-linear"
                     (click)="handleQuantityChange('-')">-</button>
                 <p
                     class="h-[36px] aspect-square flex justify-center items-center bg-[#f4f4f4] text-[#060709] text-[12px] leading-[18px] font-[400] rounded-[4px]">
                     {{quantity}}
                 </p>
-                <button [class]="quantity === 10 ? 'pointer-events-none' : ''"
-                    class="h-[36px] aspect-square flex justify-center items-center"
+                <button [class]="quantity === product.stockQuantity ? 'pointer-events-none' : ''"
+                    class="h-[36px] aspect-square flex justify-center items-center hover:bg-[#F2F6F4] transition-all duration-150 ease-linear"
                     (click)="handleQuantityChange('+')">+</button>
             </div>
             <p class="text-[#f4f4f4]">|</p>
             <div class="text-primary text-[12px] leading-[18px] font-[400]">In Stock</div>
         </div>
         <div
-            class="h-[48px] lg:h-[56px] rounded-[100px] bg-primary font-medium text-[16px] leading-6 py-0 items-center lg:py-4 px-6 lg:px-8 text-white flex cursor-pointer">
+            class="h-[48px] lg:h-[56px] rounded-[100px] bg-primary font-medium text-[16px] leading-6 py-0 items-center lg:py-4 w-[214px] lg:w-[250px] text-white flex justify-center cursor-pointer">
             <p>Add to Cart</p>
             <p class="px-4">|</p>
-            <p>${{getPrice()}}</p>
+            <p class="w-[45px] text-center">${{getPrice()}}</p>
         </div>
     </div>
     <div

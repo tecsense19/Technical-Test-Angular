@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DescriptionComponent } from '../description/description.component';
 import { ReferAFriendComponent } from '../refer-a-friend/refer-a-friend.component';
 import { ReviewsComponent } from '../reviews/reviews.component';
@@ -12,6 +12,7 @@ import { NgClass, NgIf } from '@angular/common';
   styleUrl: './toggle.component.css'
 })
 export class ToggleComponent {
+  @Input() reviewData: any;
   selectedComponent: string = 'reviews';
 
   selectComponent(component: string): void {
