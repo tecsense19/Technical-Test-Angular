@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-technical-test": {
+    "test-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-technical-test",
+            "outputPath": {
+              "baseHref": "/",
+              "base": "dist",
+              "browser": ""
+            },
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -29,12 +33,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -64,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-technical-test:build:production"
+              "buildTarget": "test-app:build:production"
             },
             "development": {
-              "buildTarget": "angular-technical-test:build:development"
+              "buildTarget": "test-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -97,8 +96,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "459edeff-94fb-4d15-ae4e-b3bdae9e0de8"
   }
 }
