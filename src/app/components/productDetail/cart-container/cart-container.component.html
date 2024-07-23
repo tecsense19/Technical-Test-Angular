@@ -60,14 +60,14 @@
         <div class="border-[#f4f4f4] border rounded-[10px] flex gap-4 items-center pe-6 ps-4 py-[6px] lg:py-[10px]">
             <div class="flex gap-x-1">
                 <button [class]="quantity === 1 ? 'pointer-events-none' : ''"
-                    class="h-[36px] aspect-square flex justify-center items-center hover:bg-[#F2F6F4] transition-all duration-150 ease-linear"
+                    class="h-[36px] aspect-square flex justify-center items-center hover:bg-[#F2F6F4] transition-all duration-150 ease-linear rounded"
                     (click)="handleQuantityChange('-')">-</button>
                 <p
-                    class="h-[36px] aspect-square flex justify-center items-center bg-[#f4f4f4] text-[#060709] text-[12px] leading-[18px] font-[400] rounded-[4px]">
+                    class="h-[36px] aspect-square flex justify-center items-center bg-[#f4f4f4] text-[#060709] text-[12px] leading-[18px] font-normal rounded">
                     {{quantity}}
                 </p>
                 <button [class]="quantity === product.stockQuantity ? 'pointer-events-none' : ''"
-                    class="h-[36px] aspect-square flex justify-center items-center hover:bg-[#F2F6F4] transition-all duration-150 ease-linear"
+                    class="h-[36px] aspect-square flex justify-center items-center hover:bg-[#F2F6F4] transition-all duration-150 ease-linear rounded"
                     (click)="handleQuantityChange('+')">+</button>
             </div>
             <p class="text-[#f4f4f4]">|</p>
