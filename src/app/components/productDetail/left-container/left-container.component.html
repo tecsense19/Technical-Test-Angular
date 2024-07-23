@@ -5,7 +5,7 @@
 </div> -->
 
 <div
-  class="mx-auto max-w-2xl  sm:grid sm:max-w-7xl sm:grid-cols-3 sm:gap-x-8 border border-[#F4F4F4] rounded-[16px]  overflow-auto">
+  class="mx-auto max-w-2xl  sm:grid sm:max-w-7xl sm:grid-cols-3 sm:gap-x-8 border border-[#F4F4F4] rounded-[16px]  overflow-auto relative">
   <div class="aspect-h-3 aspect-w-3 hidden overflow-hidden rounded-sm sm:block">
     <img src={{product.imgURL}} alt='' class="h-full w-full object-cover object-center" />
   </div>
@@ -19,6 +19,9 @@
   </div>
   <div class="aspect-h-5 aspect-w-4 sm:aspect-h-4 sm:aspect-w-3 sm:overflow-hidden sm:rounded-sm">
     <img src={{product.imgURL}} alt='' class="h-full w-full object-cover object-center" />
+  </div>
+  <div class="absolute bottom-4 right-4 h-8 w-8 rounded-full bg-white shadow flex">
+    <img src="assets/export.png" alt="export" class="h-4 w-4 m-auto">
   </div>
 </div>
 
